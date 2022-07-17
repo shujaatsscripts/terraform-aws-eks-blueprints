@@ -20,6 +20,6 @@ terraform {
   # backend "s3" {
   #   bucket = "terraform-ssp-github-actions-state"
   #   region = "us-west-2"
-  #   key    = "e2e/windows-node-groups/terraform.tfstate"
+  #   key    = "e2e/self-managed-node-groups/terraform.tfstate"
   # }
 }

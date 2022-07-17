@@ -38,6 +38,7 @@ locals {
 #---------------------------------------------------------------
 # EKS Blueprints
 #---------------------------------------------------------------
+
 module "eks_blueprints" {
   source = "../../.."
 
@@ -47,29 +48,48 @@ module "eks_blueprints" {
   vpc_id             = module.vpc.vpc_id
   private_subnet_ids = module.vpc.private_subnets
 
-  managed_node_groups = {
-    mng_spot_medium = {
-      node_group_name = "mng-spot-med"
-      capacity_type   = "SPOT"
-      instance_types  = ["t3.large", "t3.xlarge"]
-      subnet_ids      = module.vpc.private_subnets
-      desired_size    = 2
-      disk_size       = 30
-    }
-  }
-
-  enable_windows_support = true
   self_managed_node_groups = {
-    ng_od_windows = {
-      node_group_name    = "ng-od-windows"
-      launch_template_os = "windows"
-      instance_type      = "m5.large"
-      subnet_ids         = module.vpc.private_subnets
-      min_size           = 2
+    on_demand = {
+      # Due to spot taints, need somewhere for core addons to run
+      name = "on-demand"
+
+      instance_types = ["m5.large"]
+    }
+
+    spot_2vcpu_8mem = {
+      name = "spot-2vcpu-8mem"
+
+      capacity_type      = "spot"
+      capacity_rebalance = true
+      instance_types     = ["m5.large", "m4.large", "m6a.large", "m5a.large", "m5d.large"]
+      min_size           = 0
+
+      taints = [
+        {
+          key    = "spotInstance"
+          value  = "true"
+          effect = "NO_SCHEDULE"
+        }
+      ]
+    }
+
+    spot_4vcpu_16mem = {
+      name = "spot-4vcpu-16mem"
+
+      capacity_type      = "spot"
+      capacity_rebalance = true
+      instance_types     = ["m5.xlarge", "m4.xlarge", "m6a.xlarge", "m5a.xlarge", "m5d.xlarge"]
+      min_size           = 0
+
+      taints = [
+        {
+          key    = "spotInstance"
+          value  = "true"
+          effect = "NO_SCHEDULE"
+        }
+      ]
     }
   }
-
-  tags = local.tags
 }
 
 module "eks_blueprints_kubernetes_addons" {
@@ -80,48 +100,40 @@ module "eks_blueprints_kubernetes_addons" {
   eks_oidc_provider    = module.eks_blueprints.oidc_provider
   eks_cluster_version  = module.eks_blueprints.eks_cluster_version
 
-  # EKS Managed Add-ons
+  enable_amazon_eks_vpc_cni    = true
   enable_amazon_eks_coredns    = true
   enable_amazon_eks_kube_proxy = true
 
-  # Add-ons
-  enable_aws_load_balancer_controller = true
-  aws_load_balancer_controller_helm_config = {
-    set = [
-      {
-        name  = "nodeSelector.kubernetes\\.io/os"
-        value = "linux"
-      }
-    ]
-  }
-
-  enable_metrics_server = true
-  metrics_server_helm_config = {
-    set = [
-      {
-        name  = "nodeSelector.kubernetes\\.io/os"
-        value = "linux"
-      }
-    ]
-  }
+  enable_metrics_server               = true
+  enable_aws_node_termination_handler = true
+  auto_scaling_group_names            = module.eks_blueprints.self_managed_node_groups_autoscaling_group_names
 
   enable_cluster_autoscaler = true
   cluster_autoscaler_helm_config = {
     set = [
       {
-        name  = "nodeSelector.kubernetes\\.io/os"
-        value = "linux"
+        name  = "extraArgs.expander"
+        value = "priority"
+      },
+      {
+        name  = "expanderPriorities"
+        value = <<-EOT
+          100:
+            - .*-spot-2vcpu-8mem.*
+          90:
+            - .*-spot-4vcpu-16mem.*
+          10:
+            - .*
+        EOT
       }
     ]
   }
-
-  tags = local.tags
-
 }
 
 #---------------------------------------------------------------
 # Supporting Resources
 #---------------------------------------------------------------
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"

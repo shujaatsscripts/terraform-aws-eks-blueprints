@@ -20,7 +20,7 @@ spec:
     resources:
       cpu: 1000
   provider:
-    launchTemplate: "karpenter-${eks-cluster-id}"     # Used by Karpenter Nodes
+    launchTemplate: ${launch_template_name}
     subnetSelector:
       Name: "${eks-vpc_name}-private*"
   labels:

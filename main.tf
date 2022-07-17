@@ -15,6 +15,9 @@ module "aws_eks" {
   fargate_profiles         = var.fargate_profiles
   fargate_profile_defaults = var.fargate_profile_defaults
 
+  self_managed_node_groups         = var.self_managed_node_groups
+  self_managed_node_group_defaults = var.self_managed_node_group_defaults
+
   # IAM Role
   create_iam_role = var.create_iam_role
   iam_role_arn    = var.iam_role_arn
