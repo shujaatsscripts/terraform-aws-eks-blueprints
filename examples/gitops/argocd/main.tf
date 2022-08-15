@@ -21,6 +21,7 @@ data "aws_eks_cluster_auth" "this" {
 }
 
 data "aws_availability_zones" "available" {}
+data "aws_caller_identity" "current" {}
 
 locals {
   name   = basename(path.cwd)
@@ -60,6 +61,33 @@ module "eks_blueprints" {
     }
   }
 
+  # EKS Teams
+  platform_teams = {
+    admin = {
+      users = [data.aws_caller_identity.current.arn]
+    }
+  }
+
+  application_teams = {
+    team-blue = {
+      labels = {
+        appName     = "blue-app"
+        projectName = "project-blue"
+      }
+      quota = {
+        "requests.cpu"    = "1000m"
+        "requests.memory" = "4Gi"
+        "limits.cpu"      = "2000m"
+        "limits.memory"   = "8Gi"
+        pods              = "10"
+        secrets           = "10"
+        services          = "10"
+      }
+
+      users = [data.aws_caller_identity.current.arn]
+    }
+  }
+
   tags = local.tags
 }
 
@@ -77,7 +105,7 @@ module "eks_blueprints_kubernetes_addons" {
     set_sensitive = [
       {
         name  = "configs.secret.argocdServerAdminPassword"
-        value = bcrypt(data.aws_secretsmanager_secret_version.admin_password_version.secret_string)
+        value = bcrypt(aws_secretsmanager_secret_version.argocd.secret_string)
       }
     ]
   }
@@ -122,21 +150,17 @@ resource "random_password" "argocd" {
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
-#tfsec:ignore:aws-ssm-secret-use-customer-key
-resource "aws_secretsmanager_secret" "arogcd" {
-  name                    = "argocd"
-  recovery_window_in_days = 0 # Set to zero for this example to force delete during Terraform destroy
+resource "aws_secretsmanager_secret" "argocd" {
+  name_prefix             = "argocd-"
+  description             = "ArgoCD admin password"
+  recovery_window_in_days = 0
+
+  tags = local.tags
 }
 
-resource "aws_secretsmanager_secret_version" "arogcd" {
-  secret_id     = aws_secretsmanager_secret.arogcd.id
+resource "aws_secretsmanager_secret_version" "argocd" {
+  secret_id     = aws_secretsmanager_secret.argocd.id
   secret_string = random_password.argocd.result
-}
-
-data "aws_secretsmanager_secret_version" "admin_password_version" {
-  secret_id = aws_secretsmanager_secret.arogcd.id
-
-  depends_on = [aws_secretsmanager_secret_version.arogcd]
 }
 
 #---------------------------------------------------------------
