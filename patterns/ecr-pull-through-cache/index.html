@@ -10,13 +10,13 @@
         <meta name="author" content="AWS">
       
       
-        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/internal/ci/">
+        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/patterns/ecr-pull-through-cache/">
       
       
-        <link rel="prev" href="../../_partials/destroy/">
+        <link rel="prev" href="../bottlerocket/">
       
       
-        <link rel="next" href="../../patterns/agones-game-controller/">
+        <link rel="next" href="../external-secrets/">
       
       
       <link rel="icon" href="../../images/colored-logo.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>E2E tests - Amazon EKS Blueprints for Terraform</title>
+        <title>ECR Pull Through Cache - Amazon EKS Blueprints for Terraform</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#e2e-tests" class="md-skip">
+        <a href="#ecr-pull-through-cache" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              E2E tests
+              ECR Pull Through Cache
             
           </span>
         </div>
@@ -307,17 +307,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -331,7 +333,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Patterns
@@ -345,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/agones-game-controller/" class="md-nav__link">
+      <a href="../agones-game-controller/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/blue-green-upgrade/" class="md-nav__link">
+      <a href="../blue-green-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -387,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/bottlerocket/" class="md-nav__link">
+      <a href="../bottlerocket/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -405,10 +407,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../patterns/ecr-pull-through-cache/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ECR Pull Through Cache
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -417,6 +439,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destroy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -429,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/external-secrets/" class="md-nav__link">
+      <a href="../external-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -450,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/fargate-serverless/" class="md-nav__link">
+      <a href="../fargate-serverless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -471,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/fully-private-cluster/" class="md-nav__link">
+      <a href="../fully-private-cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gitops/gitops-getting-started-argocd/" class="md-nav__link">
+      <a href="../gitops/gitops-getting-started-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gitops/gitops-multi-cluster-hub-spoke-argocd/" class="md-nav__link">
+      <a href="../gitops/gitops-multi-cluster-hub-spoke-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/istio/" class="md-nav__link">
+      <a href="../istio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/karpenter/" class="md-nav__link">
+      <a href="../karpenter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -619,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/karpenter-mng/" class="md-nav__link">
+      <a href="../karpenter-mng/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -640,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/kubecost/" class="md-nav__link">
+      <a href="../kubecost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -696,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/aws-neuron-efa/" class="md-nav__link">
+      <a href="../machine-learning/aws-neuron-efa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/ml-capacity-block/" class="md-nav__link">
+      <a href="../machine-learning/ml-capacity-block/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -738,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/ml-container-cache/" class="md-nav__link">
+      <a href="../machine-learning/ml-container-cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/nvidia-gpu-efa/" class="md-nav__link">
+      <a href="../machine-learning/nvidia-gpu-efa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/targeted-odcr/" class="md-nav__link">
+      <a href="../machine-learning/targeted-odcr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -809,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/multi-tenancy-with-teams/" class="md-nav__link">
+      <a href="../multi-tenancy-with-teams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -865,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/aws-vpc-cni-network-policy/" class="md-nav__link">
+      <a href="../network/aws-vpc-cni-network-policy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/client-server-communication/" class="md-nav__link">
+      <a href="../network/client-server-communication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -907,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/cross-cluster-pod-communication/" class="md-nav__link">
+      <a href="../network/cross-cluster-pod-communication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -928,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/ipv6-eks-cluster/" class="md-nav__link">
+      <a href="../network/ipv6-eks-cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -949,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/private-public-ingress/" class="md-nav__link">
+      <a href="../network/private-public-ingress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -970,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/privatelink-access/" class="md-nav__link">
+      <a href="../network/privatelink-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/tls-with-aws-pca-issuer/" class="md-nav__link">
+      <a href="../network/tls-with-aws-pca-issuer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1012,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/wireguard-with-cilium/" class="md-nav__link">
+      <a href="../network/wireguard-with-cilium/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/sso-iam-identity-center/" class="md-nav__link">
+      <a href="../sso-iam-identity-center/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/sso-okta/" class="md-nav__link">
+      <a href="../sso-okta/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/stateful/" class="md-nav__link">
+      <a href="../stateful/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1361,9 +1430,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destroy
     </span>
   </a>
   
@@ -1387,75 +1474,120 @@
   
 
 
-<h1 id="e2e-tests">E2E tests<a class="headerlink" href="#e2e-tests" title="Permanent link">&para;</a></h1>
-<p>We use GitHub Actions to run an end-to-end tests to verify all PRs. The GitHub Actions used are a combination of <code>aws-actions/configure-aws-credentials</code> and <code>hashicorp/setup-terraform@v1</code>.</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use the following CloudFormation template to setup a new IAM role.</li>
-</ol>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">Parameters</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">GitHubOrg</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">RepositoryName</span><span class="p">:</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">OIDCProviderArn</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Arn for the GitHub OIDC Provider.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">Default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">Conditions</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">CreateOIDCProvider</span><span class="p">:</span><span class="w"> </span><span class="kt">!Equals</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDCProviderArn</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nt">Resources</span><span class="p">:</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">Role</span><span class="p">:</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::Role</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">AssumeRolePolicyDocument</span><span class="p">:</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">Statement</span><span class="p">:</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">Action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sts:AssumeRoleWithWebIdentity</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">Principal</span><span class="p">:</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">              </span><span class="nt">Federated</span><span class="p">:</span><span class="w"> </span><span class="kt">!If</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CreateOIDCProvider</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GithubOidc</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDCProviderArn</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="nt">Condition</span><span class="p">:</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">              </span><span class="nt">StringLike</span><span class="p">:</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                </span><span class="nt">token.actions.githubusercontent.com:sub</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repo:${GitHubOrg}/${RepositoryName}:*</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">GithubOidc</span><span class="p">:</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::OIDCProvider</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nt">Condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CreateOIDCProvider</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">      </span><span class="nt">Url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://token.actions.githubusercontent.com</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">      </span><span class="nt">ClientIdList</span><span class="p">:</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sts.amazonaws.com</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">      </span><span class="nt">ThumbprintList</span><span class="p">:</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a031c46782e6e6c662c2c87c76da9aa62ccabd8e</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="nt">Outputs</span><span class="p">:</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">  </span><span class="nt">Role</span><span class="p">:</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="nt">Value</span><span class="p">:</span><span class="w"> </span><span class="kt">!GetAtt</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role.Arn</span>
+<!-- BEGIN INCLUDE ../../patterns/ecr-pull-through-cache/README.md -->
+<h1 id="ecr-pull-through-cache">ECR Pull Through Cache<a class="headerlink" href="#ecr-pull-through-cache" title="Permanent link">&para;</a></h1>
+<p>This pattern demonstrates how to set up ECR cache pull-through for public images. The Terraform code creates four cache pull-through rules for public image repositories: Docker, Kubernetes, Quay, and ECR. It also configures basic scanning on push for all repositories and includes a creation template. Additionally, it configures the EC2 node role with permissions to pull through images. The setup then installs ALB Controller, Metrics Server, Gatekeeper, ArgoCD, and Prometheus Operator, with their respective Helm charts configured in the values files to pull images through the pull-through cache.</p>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<p>Follow the instructions <a href="https://aws-ia.github.io/terraform-aws-eks-blueprints/getting-started/#prerequisites">here</a> for the prerequisites and steps to deploy this pattern.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-var<span class="o">=</span><span class="s1">&#39;docker_secret={&quot;username&quot;:&quot;your-docker-username&quot;, &quot;accessToken&quot;:&quot;your-docker-password&quot;}&#39;</span>
 </span></code></pre></div>
-<ol>
-<li>
-<p>Add a permissible IAM Policy to the above create role. For our purpose <code>AdministratorAccess</code> works the best.</p>
-</li>
-<li>
-<p>Setup a GitHub repo secret called <code>ROLE_TO_ASSUME</code> and set it to ARN of the role created in 1.</p>
-</li>
-<li>
-<p>We use an S3 backend for the e2e tests. This allows us to recover from any failures during the <code>apply</code> stage. If you are setting up your own CI pipeline change the s3 bucket name in backend configuration of the example.</p>
-</li>
-</ol>
+<h2 id="validate">Validate<a class="headerlink" href="#validate" title="Permanent link">&para;</a></h2>
+<p>Validate the pull trough cache rules connectivity:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>docker-hub<span class="w"> </span>ecr<span class="w"> </span>k8s<span class="w"> </span>quay<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>aws<span class="w"> </span>ecr<span class="w"> </span>validate-pull-through-cache-rule<span class="w"> </span>--ecr-repository-prefix<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>--region<span class="w"> </span>us-east-1<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<p>Expected output:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;ecrRepositoryPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker-hub&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;registryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111122223333&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;upstreamRegistryUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;registry-1.docker.io&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;credentialArn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:secretsmanager:us-east-1:111122223333:secret:ecr-pullthroughcache/docker-111XXX&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;isValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;ecrRepositoryPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ecr&quot;</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&quot;registryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111122223333&quot;</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">&quot;upstreamRegistryUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;public.ecr.aws&quot;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&quot;isValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">&quot;failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">{</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nt">&quot;ecrRepositoryPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;k8s&quot;</span><span class="p">,</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nt">&quot;registryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111122223333&quot;</span><span class="p">,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nt">&quot;upstreamRegistryUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;registry.k8s.io&quot;</span><span class="p">,</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="nt">&quot;isValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">&quot;failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">{</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nt">&quot;ecrRepositoryPrefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quay&quot;</span><span class="p">,</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="nt">&quot;registryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111122223333&quot;</span><span class="p">,</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nt">&quot;upstreamRegistryUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quay.io&quot;</span><span class="p">,</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="nt">&quot;isValid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="nt">&quot;failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Validate pods are pulling the images and in Running state:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</span></code></pre></div>
+<p>Expected output:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>NAMESPACE<span class="w">               </span>NAME<span class="w">                                                        </span>READY<span class="w">   </span>STATUS<span class="w">      </span>RESTARTS<span class="w">   </span>AGE
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>argocd<span class="w">                  </span>argo-cd-argocd-application-controller-0<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m26s
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>argocd<span class="w">                  </span>argo-cd-argocd-applicationset-controller-78ccd75cfb-7zfs5<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m28s
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>argocd<span class="w">                  </span>argo-cd-argocd-notifications-controller-8cc5c5578-r7g8s<span class="w">     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m27s
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>argocd<span class="w">                  </span>argo-cd-argocd-redis-secret-init-x55l4<span class="w">                      </span><span class="m">0</span>/1<span class="w">     </span>Completed<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m43s
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>argocd<span class="w">                  </span>argo-cd-argocd-repo-server-5d64dff78d-wg7xm<span class="w">                 </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m27s
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>argocd<span class="w">                  </span>argo-cd-argocd-server-7b7974dfbf-dl7z6<span class="w">                      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m27s
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-haproxy-78456c586d-4jxxh<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m28s
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-haproxy-78456c586d-cp7sw<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m28s
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-haproxy-78456c586d-hpfrl<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m28s
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-server-0<span class="w">                                   </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>2m26s
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-server-1<span class="w">                                   </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>71s
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>argocd<span class="w">                  </span>argo-cd-redis-ha-server-2<span class="w">                                   </span><span class="m">1</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11s
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>gatekeeper-system<span class="w">       </span>gatekeeper-audit-85cc8756cf-zx5xn<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>53s
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>gatekeeper-system<span class="w">       </span>gatekeeper-controller-manager-568c7544d-6s5hw<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>53s
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>gatekeeper-system<span class="w">       </span>gatekeeper-controller-manager-568c7544d-gtq88<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>53s
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>gatekeeper-system<span class="w">       </span>gatekeeper-controller-manager-568c7544d-nz5g4<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>53s
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>kube-prometheus-stack<span class="w">   </span>alertmanager-kube-prometheus-stack-alertmanager-0<span class="w">           </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m33s
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-grafana-76f988cb8c-dbsc5<span class="w">              </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-kube-state-metrics-57c4f8df9c-td9tp<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-operator-77695dc8-z4qm2<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-prometheus-node-exporter-dp9nl<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-prometheus-node-exporter-gsp24<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>kube-prometheus-stack<span class="w">   </span>kube-prometheus-stack-prometheus-node-exporter-vgl4r<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m38s
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>kube-prometheus-stack<span class="w">   </span>prometheus-kube-prometheus-stack-prometheus-0<span class="w">               </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>9m33s
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>kube-system<span class="w">             </span>aws-load-balancer-controller-7cb475c856-7rgwm<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>10m
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>kube-system<span class="w">             </span>aws-load-balancer-controller-7cb475c856-qh2v6<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>10m
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>kube-system<span class="w">             </span>aws-node-4v2c5<span class="w">                                              </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>kube-system<span class="w">             </span>aws-node-lgcsc<span class="w">                                              </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>kube-system<span class="w">             </span>aws-node-lprv6<span class="w">                                              </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>kube-system<span class="w">             </span>coredns-86d5d9b668-gw2c7<span class="w">                                    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>kube-system<span class="w">             </span>coredns-86d5d9b668-qtfxm<span class="w">                                    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>kube-system<span class="w">             </span>ebs-csi-controller-57547c649b-bm4lv<span class="w">                         </span><span class="m">6</span>/6<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>kube-system<span class="w">             </span>ebs-csi-controller-57547c649b-q68b6<span class="w">                         </span><span class="m">6</span>/6<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>kube-system<span class="w">             </span>ebs-csi-node-7shn9<span class="w">                                          </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>kube-system<span class="w">             </span>ebs-csi-node-f25zz<span class="w">                                          </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>kube-system<span class="w">             </span>ebs-csi-node-rdq6v<span class="w">                                          </span><span class="m">3</span>/3<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>11m
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>kube-system<span class="w">             </span>kube-proxy-7mzgr<span class="w">                                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>kube-system<span class="w">             </span>kube-proxy-ksz6w<span class="w">                                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>kube-system<span class="w">             </span>kube-proxy-w6x2s<span class="w">                                            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>12m
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>kube-system<span class="w">             </span>metrics-server-5d6489d58d-pbrxv<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>10m
+</span></code></pre></div>
+<h2 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h2>
+<p>ECR repositories are automatically created via pull through cache and can be deleted using the following command.</p>
+<blockquote>
+<p>NOTE: This commands deletes all the ECR repositories in the specified region.</p>
+</blockquote>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span><span class="w"> </span>REPO<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>aws<span class="w"> </span>ecr<span class="w"> </span>describe-repositories<span class="w"> </span>--query<span class="w"> </span><span class="s1">&#39;repositories[].repositoryName&#39;</span><span class="w"> </span>--output<span class="w"> </span>text<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>aws<span class="w"> </span>ecr<span class="w"> </span>delete-repository<span class="w"> </span>--repository-name<span class="w"> </span><span class="nv">$REPO</span><span class="w"> </span>--force<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<!-- BEGIN INCLUDE ../../docs/_partials/destroy.md -->
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks_blueprints_addons&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-auto-approve
+</span></code></pre></div>
+<p>See <a href="https://aws-ia.github.io/terraform-aws-eks-blueprints/getting-started/#destroy">here</a> for more details on cleaning up the resources created.</p>
+<!-- END INCLUDE -->
+
+<!-- END INCLUDE -->
 
 
 
 
 
 
+
+  
+  
 
 
 

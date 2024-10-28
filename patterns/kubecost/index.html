@@ -10,13 +10,13 @@
         <meta name="author" content="AWS">
       
       
-        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/internal/ci/">
+        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/patterns/kubecost/">
       
       
-        <link rel="prev" href="../../_partials/destroy/">
+        <link rel="prev" href="../karpenter-mng/">
       
       
-        <link rel="next" href="../../patterns/agones-game-controller/">
+        <link rel="next" href="../machine-learning/aws-neuron-efa/">
       
       
       <link rel="icon" href="../../images/colored-logo.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>E2E tests - Amazon EKS Blueprints for Terraform</title>
+        <title>Kubecost - Amazon EKS Blueprints for Terraform</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#e2e-tests" class="md-skip">
+        <a href="#kubecost-with-aws-cloud-billing-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              E2E tests
+              Kubecost
             
           </span>
         </div>
@@ -307,17 +307,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -331,7 +333,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Patterns
@@ -345,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/agones-game-controller/" class="md-nav__link">
+      <a href="../agones-game-controller/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/blue-green-upgrade/" class="md-nav__link">
+      <a href="../blue-green-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -387,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/bottlerocket/" class="md-nav__link">
+      <a href="../bottlerocket/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -408,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/ecr-pull-through-cache/" class="md-nav__link">
+      <a href="../ecr-pull-through-cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -429,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/external-secrets/" class="md-nav__link">
+      <a href="../external-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -450,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/fargate-serverless/" class="md-nav__link">
+      <a href="../fargate-serverless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -471,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/fully-private-cluster/" class="md-nav__link">
+      <a href="../fully-private-cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gitops/gitops-getting-started-argocd/" class="md-nav__link">
+      <a href="../gitops/gitops-getting-started-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gitops/gitops-multi-cluster-hub-spoke-argocd/" class="md-nav__link">
+      <a href="../gitops/gitops-multi-cluster-hub-spoke-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/istio/" class="md-nav__link">
+      <a href="../istio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/karpenter/" class="md-nav__link">
+      <a href="../karpenter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -619,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/karpenter-mng/" class="md-nav__link">
+      <a href="../karpenter-mng/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,10 +639,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../patterns/kubecost/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Kubecost
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -649,6 +671,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubecost-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubecost UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destroy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -696,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/aws-neuron-efa/" class="md-nav__link">
+      <a href="../machine-learning/aws-neuron-efa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/ml-capacity-block/" class="md-nav__link">
+      <a href="../machine-learning/ml-capacity-block/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -738,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/ml-container-cache/" class="md-nav__link">
+      <a href="../machine-learning/ml-container-cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/nvidia-gpu-efa/" class="md-nav__link">
+      <a href="../machine-learning/nvidia-gpu-efa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/machine-learning/targeted-odcr/" class="md-nav__link">
+      <a href="../machine-learning/targeted-odcr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -809,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/multi-tenancy-with-teams/" class="md-nav__link">
+      <a href="../multi-tenancy-with-teams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -865,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/aws-vpc-cni-network-policy/" class="md-nav__link">
+      <a href="../network/aws-vpc-cni-network-policy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/client-server-communication/" class="md-nav__link">
+      <a href="../network/client-server-communication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -907,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/cross-cluster-pod-communication/" class="md-nav__link">
+      <a href="../network/cross-cluster-pod-communication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -928,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/ipv6-eks-cluster/" class="md-nav__link">
+      <a href="../network/ipv6-eks-cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -949,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/private-public-ingress/" class="md-nav__link">
+      <a href="../network/private-public-ingress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -970,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/privatelink-access/" class="md-nav__link">
+      <a href="../network/privatelink-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/tls-with-aws-pca-issuer/" class="md-nav__link">
+      <a href="../network/tls-with-aws-pca-issuer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1012,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/network/wireguard-with-cilium/" class="md-nav__link">
+      <a href="../network/wireguard-with-cilium/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/sso-iam-identity-center/" class="md-nav__link">
+      <a href="../sso-iam-identity-center/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/sso-okta/" class="md-nav__link">
+      <a href="../sso-okta/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/stateful/" class="md-nav__link">
+      <a href="../stateful/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1361,9 +1439,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubecost-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubecost UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destroy
     </span>
   </a>
   
@@ -1387,75 +1492,70 @@
   
 
 
-<h1 id="e2e-tests">E2E tests<a class="headerlink" href="#e2e-tests" title="Permanent link">&para;</a></h1>
-<p>We use GitHub Actions to run an end-to-end tests to verify all PRs. The GitHub Actions used are a combination of <code>aws-actions/configure-aws-credentials</code> and <code>hashicorp/setup-terraform@v1</code>.</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use the following CloudFormation template to setup a new IAM role.</li>
-</ol>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">Parameters</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">GitHubOrg</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">RepositoryName</span><span class="p">:</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">OIDCProviderArn</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Arn for the GitHub OIDC Provider.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">Default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">Conditions</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">CreateOIDCProvider</span><span class="p">:</span><span class="w"> </span><span class="kt">!Equals</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDCProviderArn</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nt">Resources</span><span class="p">:</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">Role</span><span class="p">:</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::Role</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">AssumeRolePolicyDocument</span><span class="p">:</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">Statement</span><span class="p">:</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">Action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sts:AssumeRoleWithWebIdentity</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">Principal</span><span class="p">:</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">              </span><span class="nt">Federated</span><span class="p">:</span><span class="w"> </span><span class="kt">!If</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CreateOIDCProvider</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GithubOidc</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDCProviderArn</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="nt">Condition</span><span class="p">:</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">              </span><span class="nt">StringLike</span><span class="p">:</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                </span><span class="nt">token.actions.githubusercontent.com:sub</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repo:${GitHubOrg}/${RepositoryName}:*</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">GithubOidc</span><span class="p">:</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::IAM::OIDCProvider</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nt">Condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CreateOIDCProvider</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="nt">Properties</span><span class="p">:</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">      </span><span class="nt">Url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://token.actions.githubusercontent.com</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">      </span><span class="nt">ClientIdList</span><span class="p">:</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sts.amazonaws.com</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">      </span><span class="nt">ThumbprintList</span><span class="p">:</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a031c46782e6e6c662c2c87c76da9aa62ccabd8e</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="nt">Outputs</span><span class="p">:</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">  </span><span class="nt">Role</span><span class="p">:</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="nt">Value</span><span class="p">:</span><span class="w"> </span><span class="kt">!GetAtt</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role.Arn</span>
+<!-- BEGIN INCLUDE ../../patterns/kubecost/README.md -->
+<h1 id="kubecost-with-aws-cloud-billing-integration">Kubecost with AWS Cloud Billing Integration<a class="headerlink" href="#kubecost-with-aws-cloud-billing-integration" title="Permanent link">&para;</a></h1>
+<p>This pattern demonstrates how to install and configure Kubecost with AWS CUR report.
+The terraform code was created following the official Kubecost documentation for <a href="https://docs.kubecost.com/install-and-configure/install/cloud-integration/aws-cloud-integrations">aws cloud billing integration</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>You need a valid Kubecost token. To generate one, follow the instructions <a href="https://www.kubecost.com/install#show-instructions">here</a>.</p>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.vpc&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-auto-approve<span class="w"> </span>--var<span class="o">=</span><span class="s2">&quot;kubecost_token=&lt;your-kubecost-token&gt;&quot;</span>
 </span></code></pre></div>
-<ol>
-<li>
-<p>Add a permissible IAM Policy to the above create role. For our purpose <code>AdministratorAccess</code> works the best.</p>
-</li>
-<li>
-<p>Setup a GitHub repo secret called <code>ROLE_TO_ASSUME</code> and set it to ARN of the role created in 1.</p>
-</li>
-<li>
-<p>We use an S3 backend for the e2e tests. This allows us to recover from any failures during the <code>apply</code> stage. If you are setting up your own CI pipeline change the s3 bucket name in backend configuration of the example.</p>
-</li>
-</ol>
+<p>Once all of the resources have successfully been provisioned, the following command can be used to update the <code>kubeconfig</code> on your local machine and allow you to interact with your EKS Cluster using <code>kubectl</code>.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>aws<span class="w"> </span>eks<span class="w"> </span>--region<span class="w"> </span>&lt;REGION&gt;<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;CLUSTER_NAME&gt;
+</span></code></pre></div>
+<p>This command will create a S3 bucket with prefix <code>kubecost-</code> and a Cost and Usage Report (CUR). Within 24h The CUR will generate a CloudFormation template file called <code>crawler-cfn.yml</code> in the S3 bucket. Once that file is generated, navigate to:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>run-me-in-24h/
+</span></code></pre></div>
+<p>To download and apply the CloudFormation template, run:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>terraform<span class="w"> </span>init
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>--auto-approve
+</span></code></pre></div>
+<h2 id="kubecost-ui">Kubecost UI<a class="headerlink" href="#kubecost-ui" title="Permanent link">&para;</a></h2>
+<p>To access the Kubecost UI run:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span>http://<span class="k">$(</span>kubectl<span class="w"> </span>-n<span class="w"> </span>kubecost<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>cost-analyzer-cost-analyzer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span class="k">)</span>:9090/
+</span></code></pre></div>
+<p>and then navigate to the output URL.</p>
+<p>Navigate to Settings -&gt; Diagnostics -&gt; View Full Diagnostics</p>
+<p>Expected result:</p>
+<hr />
+<div align="center">
+    <img
+    src="./assets/screenshot.png"
+    width="70%"
+    alt="Kubecost diagnostics screenshot"
+    />
+</div>
+
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Spot Data Feed is included in Savings Plan, Reserved Instance, and Out-Of-Cluster.</p>
+</div>
+<h2 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h2>
+<p>First destroy the CloudFormation template:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>run-me-in-24h/
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>--auto-approve
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>..
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks_blueprints_addon&quot;</span><span class="w"> </span>--var<span class="o">=</span><span class="s2">&quot;kubecost_token=&lt;your-kubecost-token&gt;&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks_blueprints_addons&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-auto-approve
+</span></code></pre></div>
+<!-- END INCLUDE -->
 
 
 
 
 
 
+
+  
+  
 
 
 
